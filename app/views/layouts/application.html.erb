@@ -9,7 +9,10 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
- <body>
+<body>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
 
     <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class="container">
@@ -19,15 +22,17 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <%= link_to new_topic_path do %>
-                <%= image_tag 'icons/camera.png' %>
+              <%= link_to favorites_index_path do %>
+               <%= image_tag 'icons/heart.png' %>
               <% end %>
             </li>
+            <li>
             <li>
               <%= link_to new_topic_path do %>
                 <%= image_tag 'icons/camera.png' %>
               <% end %>
-            </li> 
+            </li>
+            </li>
             <li>
               <%= link_to logout_path, method: :delete do %>
                 <%= image_tag "icons/logout.png" %>
@@ -48,7 +53,6 @@
         </ul>
       </div>
     </nav>
-
 
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key %>" role="alert"><%= value %></div>

@@ -69,3 +69,5 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'bcrypt'
 gem "carrierwave"
+gem 'counter_culture', '~> 1.8'
+gem 'font-awesome-rails'
