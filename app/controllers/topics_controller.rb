@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all.includes(:favorite_users)
-    # 全てのtopicを取得する→投稿一覧画面へ
+    # 全てのtopicを取得する→投稿一覧画面へ :favorite_usersはモデル
   end
   
   def new

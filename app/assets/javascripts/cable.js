@@ -11,3 +11,10 @@
   App.cable = ActionCable.createConsumer();
 
 }).call(this);
+
+ $(function(){
+  $('.theart-on').on('click',function(){
+    $(this).addClass('.heart-off');
+    $(this).removeClass('.heart-on');
+  });
+ })

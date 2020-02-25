@@ -9,4 +9,5 @@ class Topic < ApplicationRecord
   
   has_many :favorites
   has_many :favorite_users, through: :favorites, source: 'user'
+  #topicをいいねしている全てのユーザー（id）を取得します
 end
